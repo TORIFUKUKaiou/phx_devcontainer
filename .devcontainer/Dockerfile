@@ -1,4 +1,6 @@
-FROM hexpm/elixir:1.17.3-erlang-27.1.1-ubuntu-focal-20241011
+# Update the VARIANT arg in docker-compose.yml to pick an Elixir version: 1.9, 1.10, 1.10.4
+ARG VARIANT="1.17.3-erlang-27.1.1-ubuntu-focal-20241011"
+FROM hexpm/elixir:${VARIANT}
 
 # This Dockerfile adds a non-root user with sudo access. Update the “remoteUser” property in
 # devcontainer.json to use it. More info: https://aka.ms/vscode-remote/containers/non-root-user.
@@ -13,13 +15,13 @@ ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev
 ARG COMMON_SCRIPT_SHA="dev-mode"
 
 # Optional Settings for Phoenix
-ARG PHOENIX_VERSION="1.6.2"
+ARG PHOENIX_VERSION="1.7.14"
 
 # [Optional] Setup nodejs
 ARG NODE_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/node-debian.sh"
 ARG NODE_SCRIPT_SHA="dev-mode"
 # [Optional, Choice] Node.js version: none, lts/*, 16, 14, 12, 10
-ARG NODE_VERSION="none"
+ARG NODE_VERSION="20"
 ENV NVM_DIR=/usr/local/share/nvm
 ENV NVM_SYMLINK_CURRENT=true
 ENV PATH=${NVM_DIR}/current/bin:${PATH}
