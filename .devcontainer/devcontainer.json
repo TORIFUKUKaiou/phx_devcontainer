@@ -14,6 +14,10 @@
 				"JakeBecker.elixir-ls",
 				"ms-azuretools.vscode-docker",
 				"florinpatrascu.vscode-elixir-snippets",
+				"phoenixframework.phoenix",
+				"moshfeu.compare-folders",
+				"vortizhe.simple-ruby-erb",
+				"Equinusocio.vsc-material-theme",
 				"GitHub.copilot"
 			]
 		}
