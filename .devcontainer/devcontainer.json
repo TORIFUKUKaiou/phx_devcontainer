@@ -1,8 +1,9 @@
 {
-	"name": "Elixir, Phoenix, Node.js & PostgresSQL (Community)",
+	"name": "Elixir, Phoenix, PostgresSQL (Community)",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "elixir",
 	"workspaceFolder": "/workspace",
+	"postAttachCommand": "cd /workspace && pwd",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -10,8 +11,10 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"jakebecker.elixir-ls",
-				"ms-azuretools.vscode-docker"
+				"JakeBecker.elixir-ls",
+				"ms-azuretools.vscode-docker",
+				"florinpatrascu.vscode-elixir-snippets",
+				"GitHub.copilot"
 			]
 		}
 	},

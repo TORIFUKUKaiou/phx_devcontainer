@@ -4,12 +4,18 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        # Elixir Version: 1.9, 1.10, 1.10.4, ...
-        VARIANT: "1.17.3-erlang-27.1.1-ubuntu-focal-20241011"
-        # Phoenix Version: 1.4.17, 1.5.4, ...
-        PHOENIX_VERSION: "1.7.14"
-        # Node Version: 12, 14, ...
-        NODE_VERSION: "20"
+        # Ubuntu Version
+        VARIANT: "ubuntu-24.04"
+        # User
+        USERNAME: "vscode"
+        # Elixir Version
+        ELIXIR_VERSION: "1.18.1"
+        # OTP release
+        ELIXIR_OTP_RELEASE: "27"
+        # OTP Version
+        OTP_VERSION: "27.2"
+        # Phoenix Version
+        PHOENIX_VERSION: "1.7.18"
 
     volumes:
       - ..:/workspace:cached
