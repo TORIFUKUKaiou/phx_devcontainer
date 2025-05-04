@@ -9,6 +9,34 @@
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
+			"settings": {
+				"workbench.colorTheme": "Material Theme",
+
+				"elixirLS.suggestSpecs": false,
+				"elixirLS.dialyzerEnabled": true,
+				"elixirLS.signatureAfterComplete": false,
+				"elixirLS.fetchDeps": false,
+
+				"files.associations": {
+				  "*.heex": "phoenix-heex"
+				},
+
+				"[elixir]": {
+				  "editor.formatOnSave": true,
+				  "editor.defaultFormatter": "JakeBecker.elixir-ls"
+				},
+
+				"[phoenix-heex]": {
+				  "editor.formatOnSave": true,
+				  "editor.defaultFormatter": "JakeBecker.elixir-ls"
+				},
+
+				"emmet.includeLanguages": {
+				  "elixir": "html",
+				  "phoenix-heex": "html"
+				},
+				"emmet.triggerExpansionOnTab": true
+			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"JakeBecker.elixir-ls",
@@ -17,7 +45,7 @@
 				"phoenixframework.phoenix",
 				"moshfeu.compare-folders",
 				"vortizhe.simple-ruby-erb",
-				"Equinusocio.vsc-material-theme",
+				"t3dotgg.vsc-material-theme-but-i-wont-sue-you",
 				"GitHub.copilot"
 			]
 		}
