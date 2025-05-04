@@ -9,8 +9,8 @@ ARG USERNAME=vscode
 # Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
 RUN apt-get update && apt-get install -y xz-utils build-essential inotify-tools git curl unzip sed
 
-RUN su ${USERNAME} -c "mkdir -p /home/vscode/.elixir-install"
-RUN su ${USERNAME} -c "curl -fsSo '/home/vscode/.elixir-install/install.sh' 'https://elixir-lang.org/install.sh'"
+RUN su ${USERNAME} -c "mkdir -p /home/${USERNAME}/.elixir-install"
+RUN su ${USERNAME} -c "curl -fsSo '/home/${USERNAME}/.elixir-install/install.sh' 'https://elixir-lang.org/install.sh'"
 
 ARG ELIXIR_VERSION='1.18.1'
 ARG ELIXIR_OTP_RELEASE='27'
@@ -19,10 +19,10 @@ ARG OTP_VERSION='27.2'
 # Optional Settings for Phoenix
 ARG PHOENIX_VERSION="1.7.18"
 
-RUN su ${USERNAME} -c "sh /home/vscode/.elixir-install/install.sh elixir@${ELIXIR_VERSION} otp@${OTP_VERSION}"
-RUN su ${USERNAME} -c "echo 'export PATH=/home/vscode/.elixir-install/installs/otp/${OTP_VERSION}/bin:/home/vscode/.elixir-install/installs/elixir/${ELIXIR_VERSION}-otp-${ELIXIR_OTP_RELEASE}/bin:$PATH' >> /home/vscode/.profile"
+RUN su ${USERNAME} -c "sh /home/${USERNAME}/.elixir-install/install.sh elixir@${ELIXIR_VERSION} otp@${OTP_VERSION}"
+RUN su ${USERNAME} -c "echo 'export PATH=/home/${USERNAME}/.elixir-install/installs/otp/${OTP_VERSION}/bin:/home/${USERNAME}/.elixir-install/installs/elixir/${ELIXIR_VERSION}-otp-${ELIXIR_OTP_RELEASE}/bin:$PATH' >> /home/${USERNAME}/.profile"
 
-RUN su ${USERNAME} -c "source /home/vscode/.profile \
+RUN su ${USERNAME} -c "source /home/${USERNAME}/.profile \
   && mix local.hex --force \
   && mix local.rebar --force \
   && mix archive.install --force hex phx_new ${PHOENIX_VERSION}"
