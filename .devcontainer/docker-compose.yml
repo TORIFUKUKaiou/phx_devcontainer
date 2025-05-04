@@ -9,13 +9,13 @@ services:
         # User
         USERNAME: "vscode"
         # Elixir Version
-        ELIXIR_VERSION: "1.18.1"
+        ELIXIR_VERSION: "1.18.3"
         # OTP release
         ELIXIR_OTP_RELEASE: "27"
         # OTP Version
-        OTP_VERSION: "27.2"
+        OTP_VERSION: "27.3.3"
         # Phoenix Version
-        PHOENIX_VERSION: "1.7.18"
+        PHOENIX_VERSION: "1.7.21"
 
     volumes:
       - ..:/workspace:cached
