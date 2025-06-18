@@ -9,11 +9,11 @@ services:
         # User
         USERNAME: "vscode"
         # Elixir Version
-        ELIXIR_VERSION: "1.18.3"
+        ELIXIR_VERSION: "1.18.4"
         # OTP release
         ELIXIR_OTP_RELEASE: "27"
         # OTP Version
-        OTP_VERSION: "27.3.3"
+        OTP_VERSION: "27.3.4.1"
         # Phoenix Version
         PHOENIX_VERSION: "1.7.21"
 
