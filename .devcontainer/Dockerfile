@@ -12,12 +12,12 @@ RUN apt-get update && apt-get install -y xz-utils build-essential inotify-tools 
 RUN su ${USERNAME} -c "mkdir -p /home/${USERNAME}/.elixir-install"
 RUN su ${USERNAME} -c "curl -fsSo '/home/${USERNAME}/.elixir-install/install.sh' 'https://elixir-lang.org/install.sh'"
 
-ARG ELIXIR_VERSION='1.18.1'
+ARG ELIXIR_VERSION='1.18.4'
 ARG ELIXIR_OTP_RELEASE='27'
-ARG OTP_VERSION='27.2'
+ARG OTP_VERSION='27.3.4.1'
 
 # Optional Settings for Phoenix
-ARG PHOENIX_VERSION="1.7.18"
+ARG PHOENIX_VERSION="1.7.21"
 
 RUN su ${USERNAME} -c "sh /home/${USERNAME}/.elixir-install/install.sh elixir@${ELIXIR_VERSION} otp@${OTP_VERSION}"
 RUN su ${USERNAME} -c "echo 'export PATH=/home/${USERNAME}/.elixir-install/installs/otp/${OTP_VERSION}/bin:/home/${USERNAME}/.elixir-install/installs/elixir/${ELIXIR_VERSION}-otp-${ELIXIR_OTP_RELEASE}/bin:$PATH' >> /home/${USERNAME}/.profile"
